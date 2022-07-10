@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="card" [formGroup]="form">
+    <div><span class="tweetLabel"><label>Add Tweet: </label></span><span class="tweetTaxtArea"><textarea formControlName="message" maxlength="144" name="message"></textarea></span></div>
+    <div><span class="tagLabel"><label>Tag Users: </label></span><span class="tagInput"><input type="text" formControlName="tagValue" maxlength="50"></span>
+      <div class="tagText">To add multiple users, add their names with a space.</div>
+      <div><button type="button" class="submit-button" (click)="createTweet()">Post</button></div>
+    </div>

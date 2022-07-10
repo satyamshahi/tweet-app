@@ -1,0 +1,26 @@
+<div class="topnav">
+
+  <ul>
+    <li>
+      <div class="mainbar-flex-item"><a class="home" (click)="onClick('home')">HOME</a></div>
+    </li>
+    <li>
+      <div class="mainbar-flex-item"><a class="all-tweets" (click)="onClick('allTweets')">TWEETS</a></div>
+    </li>
+    <li>
+      <div class="mainbar-flex-item"><a class="all-users" (click)="onClick('allUsers')">ALL USERS</a></div>
+    </li>
+    <li>
+      <div class="mainbar-flex-item"><a class="tags" (click)="onClick('taggedTweets')">TAGS</a></div>
+    </li>
+    <li>
+      <div class="mainbar-flex-item"><a class="logout" routerLink="/login" (click)="onLogout()">LOGOUT</a></div>
+    </li>
+    <li class="search">
+      <form>
+      <div ><input type="text" [formControl]="search" name="search" placeholder="Search..."><button type="submit"
+          (click)="onSearch()"><img src="/assets/search.png" ></button></div>
+        </form>
+    </li>
+  </ul>
+</div>

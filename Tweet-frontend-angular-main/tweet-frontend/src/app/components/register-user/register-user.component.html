@@ -1,0 +1,72 @@
+<div class=register-container>
+    <h1 class="text-center pt-3 text-secondary">Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div><label><b>UserName*: </b><input type="text" formControlName="username" id="username" required></label></div>
+        <large *ngIf="profileForm.get('username').invalid && profileForm.get('username').touched"
+            class="text-danger">Name is Required</large>
+
+        <div><label><b>First Name*: </b><input type="text" formControlName="firstName" name="firstName"></label></div>
+        <large *ngIf="profileForm.get('firstName').invalid && profileForm.get('firstName').touched"
+            class="text-danger">First Name is Required</large>
+
+        <div><label><b>Last Name*: </b><input type="text" formControlName="lastName" name="lastName"></label></div>
+        <large *ngIf="profileForm.get('lastName').invalid && profileForm.get('lastName').touched"
+            class="text-danger">Last Name is Required</large>
+
+        <div><label><b>Email*</b> <input type="text" formControlName="emailId" name="emailId"></label></div>
+        <large *ngIf="profileForm.get('emailId').invalid && profileForm.get('emailId').touched"
+            class="text-danger">Invalid emailId</large>
+
+        <div><label><b>Password*: </b><input type="password" formControlName="password" name="password"></label></div>
+        <large *ngIf="profileForm.get('password').invalid && profileForm.get('password').touched"
+            class="text-danger">Password is Required</large>
+
+        <div><label><b>Confirm Password*: </b><input type="password" formControlName="confirmPassword"
+                    name="confirmPassword"></label></div>
+        <large *ngIf="profileForm.get('confirmPassword').invalid && profileForm.get('confirmPassword').touched"
+            class="text-danger">Confirm Password is Required</large>
+
+        <div class="text-danger" *ngIf="passwordError">Password does not match</div>
+
+        <div><label><b>Contact Number*: </b><input type="text" formControlName="contactNumber"
+                    name="contactNumber"></label></div>
+        <large *ngIf="profileForm.get('contactNumber').invalid && profileForm.get('contactNumber').touched"
+            class="text-danger">Invalid Contact Number</large>
+
+        <div class="dropdown"><label for="questions"><b>Choose a Question: </b></label>
+
+            <div class="dropdown-select">
+            <select formControlName="questions">
+                <option *ngFor="let question of questions" [ngValue]="question">
+                    {{ question }}
+                </option>
+            </select>
+        </div>
+        </div>
+
+        <div><label><b>Answer*: </b><input type="text" formControlName="answer" id="answer"></label></div>
+        <large *ngIf="profileForm.get('answer').invalid && profileForm.get('answer').touched" class="text-danger">Answer
+            is Required</large>
+
+        <div class="dropdown"><label for="avtar"><b>Choose an Avtar:</b></label>
+
+            <div class="radio-select">
+                <label *ngFor="let av of avtar" [ngValue]="av">
+            <input type="radio" formControlName="avtar" value="{{av}}">
+               
+                    <img src="{{av}}"  class="avtar" >
+                </label>
+        </div>
+        </div>
+        <p>Complete the form to enable button.</p>
+        <div class="success-registration" *ngIf="isRegistered">User Successfully Registered</div>
+        <div class="error" *ngIf="showError">{{error}}</div>
+        <div><button type="submit" class="register-button" [disabled]="!profileForm.valid">submit</button></div>
+        
+        <div class="container signin">
+            <p>Already have an account? <a href="/login">Login</a>.</p>
+        </div>
+    </form>
+</div>

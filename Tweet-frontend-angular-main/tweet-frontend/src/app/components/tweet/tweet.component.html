@@ -1,0 +1,78 @@
+<div clsaa="tweet-container">
+  <div *ngIf="popup!=true; else popupContainer" class="user-tweet">
+
+    <div *ngIf="tweets; else nodata" class="container">
+      <div *ngFor="let tweet of tweets.reverse(); let i = index" class="content">
+        <div class="card">
+          <div class="firstinfo"><img src="{{tweet.avtar}}" />
+            <div class="profileinfo">
+              <time>{{tweet.time}}</time>
+              <h3>@{{tweet.loginId}}</h3>
+
+
+              <div *ngIf="tweet.loginId==loginId">
+
+                <div class="dropdown1">
+
+                  <button class="dropbtn">
+                    <div (click)="showThreeDots=true" class="three-dots"></div>
+                  </button>
+                  <div class="dropdown-content1">
+                    <a (click)="openModal(tweet)">
+                      <div class="update">
+                        <!-- <img src="/assets/Edit.png" > -->
+                        Update
+                      </div>
+                    </a>
+                    <a (click)="deleteTweet(tweet)">
+                      <div class="delete">
+                        <!-- <img src="/assets/Delete.png">  -->
+                        Delete
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+              <p disabled class="bio">{{tweet.message}}</p>
+              <hr>
+              <br>
+              <div class="button-container"> <button class="like" (click)="setLike(tweet.likeImage, i)"><img
+                    src="{{tweet.likeImage}}" /></button><textarea name="a{{i}}" [(ngModel)]="comment[i]" maxlength="144"
+                  placeholder="Add your Comment"></textarea><button class="comment"
+                  (click)="replyTweet(i,tweet.loginId,tweet.id)"><img src="/assets/reply.png"></button></div>
+
+
+            </div>
+
+          </div>
+          <div *ngIf="tweet.commentList"> <button class="show-button" (click)="showReply(i)">
+              <h3><img *ngIf="isReply.get(i)[1]=='Show reply'" src="/assets/up-button.png">
+                <img *ngIf="isReply.get(i)[1]!='Show reply'" src="/assets/down-button.png">
+              </h3>
+            </button>
+            <h3>Comments</h3>
+          </div>
+        </div>
+        <div *ngIf="tweet.commentList && isReply.get(i)[0]" class="comment-card">
+          <div *ngFor="let comment of tweet.commentList.reverse()" class="content">
+            <div>
+              <h3>@{{comment.commentor}}</h3> <time>{{comment.time}}</time>
+            </div>
+            <div></div>
+            <p>{{comment.commentMessage}}</p>
+            <hr>
+          </div>
+
+        </div>
+      </div>
+      </div>
+      <ng-template #nodata><div class="card" id="nodata"><h2>No tweet avaliable</h2></div></ng-template>
+  </div>
+  <ng-template #popupContainer>
+  <div class="popup-container">
+      <app-model-popup #modal></app-model-popup>
+  </div>
+</ng-template>
+</div>

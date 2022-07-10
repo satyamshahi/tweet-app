@@ -1,0 +1,110 @@
+@mixin dimensions($width: null, $height: null) {
+    width: $width;
+    min-height: $height;
+}
+
+.container {
+    position: absolute;
+    margin: auto;
+    display: block;
+    bottom: 0px;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+}
+
+.card {
+    @include dimensions(560px, 100px);
+    padding: 20px;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 190px;
+        height: 300px;
+
+        position: absolute;
+    }
+
+    .submit-button {
+        float: right;
+        background-color: #187ca7;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 16px;
+        cursor: pointer;
+        width: 100px;
+        opacity: 0.9;
+    }
+
+    textarea {
+        font-family: cursive;
+        width: 300px;
+        height: 50px;
+        border: 2px solid #dadada;
+        border-radius: 7px;
+        font-size: 15px;
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    input {
+
+        font-family: cursive;
+        width: 200px;
+        height: 30px;
+        border: 2px solid #dadada;
+        border-radius: 7px;
+        font-size: 15px;
+        padding: 5px;
+        margin-top: 10px;
+
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #9ecaed;
+        box-shadow: 0 0 10px #9ecaed;
+    }
+
+    textarea:focus {
+        outline: none;
+        border-color: #9ecaed;
+        box-shadow: 0 0 10px #9ecaed;
+    }
+}
+
+label{
+    color: #07719f;
+    //font-family: cursive;
+}
+.tweetLabel{
+    top: -27px;
+    position: relative;
+}
+.tweetTaxtArea{
+    top: -2px;
+    position: relative;
+    left: 9px;
+}
+.tagInput{
+    top: -2px;
+    position: relative;
+    left: 15px;
+}
+
+.tagText{
+    font-size: smaller;
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    margin-left: 100px;
+}

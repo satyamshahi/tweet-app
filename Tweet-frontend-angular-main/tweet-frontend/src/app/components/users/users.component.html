@@ -1,0 +1,16 @@
+
+<div class="container">
+    <div *ngFor="let user of users; let i = index" class="content">
+        <div class="card">
+            <div class="firstinfo"><img src="{{user.avtar}}" />
+                <div class="profileinfo">
+                    <h3><a routerLink="../../tweets/{{user.loginId}}">@{{user.loginId}}</a></h3>
+                    <p class="bio">{{user.name}}</p>
+                    <hr>
+                    <br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

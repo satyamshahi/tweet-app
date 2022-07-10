@@ -1,0 +1,15 @@
+<div #myModal class="container">
+  <div class="error">System Error</div>
+  <p>Some content here...</p>
+  <button (click)="close()">Close</button>
+</div>
+
+
+<div #updateModal class="container">
+  <div class="content">
+    <p>updateModal content here...</p>
+   <div class="textareaContainer"> <textarea [(ngModel)]="updateMessage"></textarea></div>
+   <span class="updateButton"> <button (click)="updateTweet()">Update</button></span>
+    <span class="closeButton"><button (click)="close()">Close</button></span>
+  </div>
+</div>

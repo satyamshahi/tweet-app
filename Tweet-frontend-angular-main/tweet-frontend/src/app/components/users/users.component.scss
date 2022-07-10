@@ -1,0 +1,61 @@
+%flex { display: flex; justify-content: center;	align-items: center; }
+
+@mixin dimensions($width: null, $height: null) {
+    width: $width;
+    min-height: $height;
+}
+
+.container {
+    position: absolute;
+    margin: auto;
+    display: block;
+    bottom: 0px;
+    top: 100px;
+    display: flex;
+  flex-wrap: wrap;
+  margin: 10px 10px 10px 10px;
+  text-transform: capitalize;
+}
+
+.card {
+    @include dimensions(250px, 100px);
+    padding: 20px;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 10px 10px 10px 10px;
+
+    overflow: hidden;
+
+    // &:after {
+    //     content: '';
+    //     display: block;
+    //     width: 190px;
+    //     height: 300px;
+
+    //     position: absolute;
+    // }
+}
+
+.firstinfo{
+    @extend %flex;
+    flex-direction: row;  
+    z-index:1;
+    position: relative;
+    img{ 
+      border-radius: 50%;
+      width: 120px;
+  height: 120px;
+    }
+    .profileinfo{
+      padding: 0px 20px;
+      h1{ font-size: 1.8em;}
+     
+      p.bio{
+        padding: 10px 0px;
+        color: #5A5A5A;
+        line-height: 1.2;
+        font-style: initial;
+      }  
+    }
+  }

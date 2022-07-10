@@ -1,0 +1,65 @@
+.tweet {
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  top: 60vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.create-tweet {
+  position: absolute;
+  margin: 10px;
+  display: block;
+  bottom: 0px;
+  top: -78px;
+  left: 49%;
+}
+
+// .container {
+//     background-color: aquamarine;
+
+// }
+
+// .user-profile {
+//     top: 0.1em;
+//     margin: 20px;
+//     width: fit-content;
+// }
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+    border-radius: 5px 5px 0 0;
+  }
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 #00000033;
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    background-color: antiquewhite;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+    background-color: #187ca7;
+  }
+
+  h4{
+    color: white;
+    //font-family: cursive;
+  }
+
+  p{
+    color: white;
+    //font-family: cursive;
+  }

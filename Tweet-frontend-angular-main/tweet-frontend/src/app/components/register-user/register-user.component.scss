@@ -1,0 +1,108 @@
+.form-control.ng-touched.ng-invalid {
+    border:1px solid red;
+   }
+   .form-control.ng-touched.ng-valid {
+    border:1px solid green;
+   }
+.text-danger{
+    color:red;
+}
+hr {
+    border: 1px solid gainsboro;
+    margin-bottom: 25px;
+  }
+* {box-sizing: border-box}
+
+.register-container{
+    padding: 16px;
+    
+    margin: auto;
+  width: 50%;
+//   border: 3px solid black;
+  padding: 10px;
+    // left: 50%;
+    // top: 50%;
+    // height: 200px;
+    // margin-top: -100px /* half of you height */
+    // width: 400px;
+    // margin-left: -200px /* half of you width */
+
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  .register-button {
+    background-color: #187ca7;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border-radius: 16px;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  .register-button:hover {
+    opacity:1;
+  }
+
+  .signin {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+
+  select {
+    background-color: #cce0ff;
+    width: 100%;
+    font-family: Arial;
+    font-size: 18px;
+    margin: 5px 0 22px 0;
+  
+  }
+
+  select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+
+p{
+  display: inline;
+}
+
+.register-button:disabled{
+  background-color: #95a2a8; 
+  cursor: default;
+  opacity:0.9;
+}
+
+.success-registration{
+  font-size: 25px;
+  color:#187ca7;
+}
+
+.error{
+  font-size: 25px;
+  color:red;
+}
+
+.radio-select{
+  padding: 20px;
+}

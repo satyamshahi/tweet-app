@@ -1,0 +1,121 @@
+.container {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  justify-self: center;
+  left: 82px;
+  top: 28px;
+  width: 81%;
+  height: 37%;
+  overflow: auto;
+  background-color: white; /* Black w/ opacity */
+  }
+  
+  .content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #8a7be3;
+    width: 91%;
+    height: 142px;
+    top: 0px;
+    position: relative;
+  }
+
+  .container::-webkit-scrollbar {
+    display: none;
+  }
+
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    overflow: hidden;
+  }
+  .info, .success, .warning, .error, .validation {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+  }
+  .info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    // background-image: url('img/info.png');
+  }
+  .success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    // background-image: url('img/success.png');
+  }
+  .warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    // background-image: url('img/warning.png');
+  }
+  .error{
+    color: #D8000C;
+    background-color: #FFBABA;
+    // background-image: url('img/error.png');
+  }
+  .validation{
+    color: #D63301;
+    background-color: #FFCCBA;
+    // background-image: url('img/validation.png');
+  }
+
+  textarea{
+    font-family: cursive;
+    width: 431px;
+    height: 75px;
+    border: 2px solid #dadada;
+    border-radius: 7px;
+    font-size: 15px;
+    padding: 5px;
+    margin-top: 10px;
+  }
+
+  textarea:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+button{
+  float: right;
+  background-color: #187ca7;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  width: 130px;
+  opacity: 0.9;
+}
+
+.textareaContainer{
+  top: -44px;
+  position: relative;
+  left: 50px;
+}
+
+.updateButton{
+  top: -53px;
+    position: relative;
+    left: -282px;
+}
+
+.closeButton{
+  top: -53px;
+    position: relative;
+    left: -16px;
+}
+
+p{
+  font-family: cursive;
+  position: relative;
+  top: -23px;
+  left: 152px;
+  color: #187ca7;;
+}

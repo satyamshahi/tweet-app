@@ -1,0 +1,320 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
+
+%reset {
+  margin: 0;
+  padding: 0;
+}
+
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@mixin dimensions($width: null, $height: null) {
+  width: $width;
+  min-height: $height;
+}
+
+$maincolor: #187ca7;
+
+html {
+  height: 100%;
+}
+
+body {
+
+  @extend %flex;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  min-height: 100%;
+  background: #187ca7;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.content {
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  margin: auto;
+  display: block;
+  bottom: 0px;
+  top: 43px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.card {
+  @include dimensions(600px, 100px);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 190px;
+    height: 300px;
+
+    position: absolute;
+  }
+}
+
+.comment-card {
+  @include dimensions(600px, 100px);
+  padding: 20px;
+  margin: 20px;
+  margin-top: -20px;
+  padding-top: -5px;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 190px;
+    height: 300px;
+
+    position: absolute;
+  }
+}
+
+.firstinfo {
+  @extend %flex;
+  flex-direction: row;
+  z-index: 1;
+  position: relative;
+
+  img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+  }
+
+  .profileinfo {
+    padding: 0px 20px;
+
+    h1 {
+      font-size: 1.8em;
+    }
+
+    p.bio {
+      width: 380px;
+      height: 70px;
+      resize: none;
+      overflow: hidden;
+      background-color: white;
+      padding: 10px;
+      color: #5A5A5A;
+      line-height: 1.2;
+      font-style: initial;
+    }
+  }
+}
+
+h3 {
+  font-size: 1.2em;
+  color: $maincolor;
+  font-style: italic;
+}
+
+h1,
+h2 {
+  color: #187ca7;
+  font-style: italic;
+}
+
+.button-container textarea {
+
+  width: 200px;
+  height: 50px;
+  border: 2px solid #dadada;
+  border-radius: 7px;
+  font-size: 15px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.button-container textarea:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+
+time {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  text-align: right;
+  font-size: small;
+
+}
+
+.like {
+  border: 2px solid #ece7e7;
+  border-radius: 7px;
+  padding: 5px;
+  width: 48px;
+  height: 45px;
+  margin-top: 9px;
+  background: none;
+  border: none;
+  margin-right: 20px;
+}
+
+.button-container img {
+  border-radius: 50%;
+  width: 40px;
+  height: 35px;
+}
+
+.show-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: arial, sans-serif;
+  color: #187ca7;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+
+  h3 {
+    display: inline;
+  }
+}
+
+.comment {
+  background: none;
+  border: none;
+  position: absolute;
+  margin: 20px;
+  width: 60px;
+  height: 35px;
+
+}
+
+.three-dots:after {
+  cursor: pointer;
+  color: #444;
+  content: '\2807';
+  font-size: 20px;
+  padding: 0 5px;
+}
+
+.popup-container {
+  @extend %flex;
+  width: 740px;
+  height: 499px;
+  position: relative;
+  display: block;
+  transform: translate(-50%, 0);
+  left: 362px;
+
+}
+
+
+
+.update img {
+  width: 30px;
+  height: 30px;
+}
+
+.delete img {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: none;
+  color: #187ca7;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content1 {
+  display: none;
+  position: fixed;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content1 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content1 a:hover {
+  background-color: #187ca7;
+  color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown1:hover .dropdown-content1 {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown1:hover .dropbtn {
+  background-color: #88c9f1;
+}
+
+#no-data{
+  left: 50%;
+}
+
+#nodata{
+  left: 0%;
+  position: relative;
+  top: -6px;
+}
+
+.tweet-container{
+top:1vh;
+}

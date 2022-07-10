@@ -1,0 +1,37 @@
+<div class="home">
+    <app-mainbar (mainbarEvent)="onClick($event)" (searchEvent)="search($event)"></app-mainbar>  
+</div>
+
+<div class="home" *ngIf="showHome">
+    <div class="card">
+        <img src="{{getItem('avtar')}}" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h4><b>{{getItem('userName')}}</b></h4>
+          <p>@{{getItem('loginId')}}</p>
+        </div>
+      </div>
+      <div class="create-tweet">
+        <app-create-tweet [username]="username"></app-create-tweet>
+    </div>
+   
+
+   
+
+        <div class="tweet">
+            <app-tweet>
+            </app-tweet>
+        </div>
+   
+</div>
+<div class="allusers" *ngIf="showAllUsers">
+    <app-users [user]="childInfo"></app-users>
+</div>
+<div class="alltweets" *ngIf="showAllTweets">
+    <app-tweet [user]="childInfo"></app-tweet>
+</div>
+<div class="taggedtweets" *ngIf="showTaggedTweets">
+    <app-tweet [user]="childInfo"></app-tweet>
+</div>
+<div class="saerch-users" *ngIf="showSearchUser">
+    <app-users #search [user]="childInfo"></app-users>
+</div>
